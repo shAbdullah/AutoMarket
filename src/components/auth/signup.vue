@@ -11,7 +11,7 @@
                         <div v-if="submitted && $v.name.$error" class="invalid-feedback">
 
                             <span class="error" v-if="!$v.name.required">Field is required</span>
-                            <span class="error" v-if="!$v.name.minLength">Name must have at least {{$v.user.name.$params.minLength.min}} letters.</span>
+                            <span class="error" v-if="!$v.name.minLength">Name must have at least {{$v.name.$params.minLength.min}} letters.</span>
                         </div>
 
                     </div>

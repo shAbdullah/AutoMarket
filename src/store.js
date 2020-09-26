@@ -115,10 +115,10 @@ id: key,
             console.log(error)
           }
         )
-         firebase.usersCollection.doc(user.uid).set({
-        name: payload.name,
+         
        
-      })
+       
+     
     },
     signUserIn ({commit}, payload) {
       commit('setLoading', true)
