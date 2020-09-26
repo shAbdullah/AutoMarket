@@ -12,9 +12,9 @@
             <div class="collapse navbar-collapse navbarSupportedContent ">
                 <ul class="navbar-nav " style="margin-right:4rem; ">
                    
-                    <router-link to="myreq" tag='li'  class='nav-item'>     <a class="nav-link">My Requsts</a> </router-link>
+                    <router-link to="myreq" tag='li'  class='nav-item'>     <a class="nav-link">Requsts</a> </router-link>
    
-                     <router-link to="about" tag='li' class='nav-item'>     <a class="nav-link">About us</a> </router-link>
+                     <router-link  tag='li' class='nav-item'>     <a class="nav-link">About us</a> </router-link>
    
 
                 </ul>
@@ -42,7 +42,7 @@
                    
                   
    
-                     <router-link to="" tag='li' class='nav-item'>     <a class="nav-link">About us</a> </router-link>
+                     <router-link  tag='li' class='nav-item'>     <a class="nav-link">About us</a> </router-link>
    
 
                     
