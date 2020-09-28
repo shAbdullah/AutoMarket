@@ -1,6 +1,6 @@
-# vue-update
+# Auto Market Website
 
-> Vue Auth & more
+You should have Node.js 
 
 ## Build Setup
 
