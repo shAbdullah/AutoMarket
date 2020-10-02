@@ -14,9 +14,9 @@
                    
                     <router-link to="myreq" tag='li'  class='nav-item'>     <a class="nav-link">Requsts</a> </router-link>
    
-                     <router-link  tag='li' class='nav-item'>     <a class="nav-link">About us</a> </router-link>
+                     <router-link  tag='li' to="about" class='nav-item'>     <a class="nav-link">About us</a> </router-link>
    
-
+   
                 </ul>
 
 
@@ -33,30 +33,21 @@
       </div>  
        <div v-else>
   <nav class="navbar navbar-expand-lg  px-4 shadow-sm header">
- <router-link tag="a" to="/" class="navbar-brand" href="#" style="color:#e0e0e0;">auto market</router-link >            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse navbarSupportedContent ">
-                <ul class="navbar-nav " style="margin-right:4rem; ">
-                   
-                  
+  <div class="row">
+       <router-link tag="a" to="/" class="navbar-brand col" href="#" style="color:#e0e0e0;">auto market</router-link >            
+                     <router-link  tag='a' class='nav-link col'  to="about" style="color:#ffffff;">    About us </router-link>
    
-                     <router-link  tag='li' class='nav-item'>     <a class="nav-link">About us</a> </router-link>
-   
-
-                    
-                </ul>
+  </div>
 
 
-
-
-            </div>
-            <div class="  navbarSupportedContent mx-3    justify-content-end" style=" padding-left: 2rem; " > <router-link to="signup"   tag='button' class="btn btn-outline-success "    >Sgin Up</router-link>
+                <div class="row">
+                  <div class="col-  navbarSupportedContent mx-3    " style=" padding-left: 2rem; " > <router-link to="signup"   tag='button' class="btn btn-outline-success "    >Sgin Up</router-link>
             </div>
             
-            <div class="  navbarSupportedContent justify-content-end" style=" " > <router-link to="login"   tag='button' class="btn btn-light my-2 my-sm-0" >Sgin In</router-link>
+            <div class="col  navbarSupportedContent " style=" " > <router-link to="login"   tag='button' class="btn btn-light my-2 my-sm-0" >Sgin In</router-link>
             </div>
+              
+                </div>
             
              
         </nav>

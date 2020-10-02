@@ -128,7 +128,7 @@ this.$v.$touch();
                     }
 
                   
-                    console.log('step1 pass');
+                  
 
         
 

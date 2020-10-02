@@ -8,20 +8,25 @@
                     
 
 
+       <div class="form-group">
 
-                    <div class="form-group">
 
+                        <input class="form__input bwj-w form-control" v-model.trim="$v.email.$model" placeholder="Enter email" :class="{ 'is-invalid': submitted && $v.email.$error }" />
+                        <div v-if="submitted && $v.email.$error" class="invalid-feedback">
 
-                        <input class=" bwj-w form-control" v-model="email" placeholder="Enter email" />
-                      
+                            <span class="error" v-if="!$v.email.required">Field is required</span>
+                            <span class="error" v-if="!$v.email.email">email should be correct.</span>
+                        </div>
                     </div>
+      <div class="form-group">
 
-
-                    <div class="form-group">
-
-                        <input class=" bwj-w form-control" v-model="password" placeholder="Password" type="password" />
-                      
+                        <input class="form__input bwj-w form-control" v-model.trim="$v.password.$model" placeholder="Password" type="password" :class="{ 'is-invalid': submitted && $v.password.$error }" />
+                        <div v-if="submitted && $v.password.$error" class="invalid-feedback">
+                            <span v-if="!$v.password.required">Password is required</span>
+                            <span v-if="!$v.password.minLength">Password must be at least 6 characters</span>
+                        </div>
                     </div>
+                 
 
                    
                     <button type="submit" class="btn btn-primary">Submit</button>
@@ -32,13 +37,34 @@
 </template>
 
 <script>
+        import {
+        required,
+        minLength,
+        email,
+        sameAs
+    } from 'vuelidate/lib/validators'
+
   export default {
     data () {
-      return {
+      return {  submitted: false,
         email: '',
         password: ''
       }
     },
+        validations: {
+            
+                email: {
+                    required,
+                    email
+                },
+                password: {
+                    required,
+                    minLength: minLength(6)
+                }
+               
+            
+        },
+
        computed: {
       user () {
         return this.$store.getters.user
@@ -59,6 +85,11 @@
     },
     methods: {
       onSubmit () {
+    this.submitted = true;
+this.$v.$touch();
+                    if (this.$v.$invalid) {
+                        return;
+                    } 
       this.$store.dispatch('signUserIn', {email: this.email, password: this.password})
       },
         
