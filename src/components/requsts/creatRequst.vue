@@ -5,7 +5,7 @@
 
             <div class="row ">
                 <div class="col">
-                    <input class=" form-group bwj-w form-control" v-model="manufacturer" placeholder="Car company" type="text" :class="{ 'is-invalid': submitted && $v.manufacturer.$error }" />
+                    <input class=" form-group bwj-w form-control"  v-model.trim="$v.manufacturer.$model" placeholder="Car company" type="text" :class="{ 'is-invalid': submitted && $v.manufacturer.$error }" />
                     <div v-if="submitted && $v.manufacturer.$error" class="invalid-feedback">
 
                         <span v-if="!$v.manufacturer.required">Manufacturer is required</span>
@@ -13,7 +13,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <input class="form-group bwj-w form-control" v-model="model" placeholder="Car model" type="text" :class="{ 'is-invalid': submitted && $v.model.$error }" />
+                    <input class="form-group bwj-w form-control"  v-model.trim="$v.model.$model" placeholder="Car model" type="text" :class="{ 'is-invalid': submitted && $v.model.$error }" />
                     <div v-if="submitted && $v.model.$error" class="invalid-feedback">
 
                         <span v-if="!$v.model.required">Model is required</span>
@@ -29,7 +29,7 @@
 
             <div class=" row">
                 <div class="col">
-                    <input class="form-group bwj-w form-control" v-model="year" placeholder="Year" type="number" :class="{ 'is-invalid': submitted && $v.year.$error }" />
+                    <input class="form-group bwj-w form-control" v-model.trim="$v.year.$model" placeholder="Year" type="number" :class="{ 'is-invalid': submitted && $v.year.$error }" />
                     <div v-if="submitted && $v.year.$error" class="invalid-feedback">
 
                         <span v-if="!$v.year.required">Year is required</span>
@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <input type="text" class="form-control bwj-w" placeholder="Part category Ex.(Gearbox)" v-model="category" :class="{ 'is-invalid': submitted && $v.category.$error }">
+                    <input type="text" class="form-control bwj-w" placeholder="Part category Ex.(Gearbox)"  v-model.trim="$v.category.$model" :class="{ 'is-invalid': submitted && $v.category.$error }">
                      <div v-if="submitted && $v.category.$error" class="invalid-feedback">
 
                         <span v-if="!$v.category.required">Part category is required</span>
@@ -52,7 +52,7 @@
 
             <div class="row">
                 <div class="col">
-                    <input type="text" class="form-control bwj-w" placeholder="Part name" v-model="partName"  :class="{ 'is-invalid': submitted && $v.partName.$error }">
+                    <input type="text" class="form-control bwj-w" placeholder="Part name"   v-model.trim="$v.partName.$model" :class="{ 'is-invalid': submitted && $v.partName.$error }">
                     <div v-if="submitted && $v.partName.$error" class="invalid-feedback">
 
                         <span v-if="!$v.partName.required">Part name is required</span>
@@ -66,12 +66,8 @@
 
                         Upload your image
                     </label>
-                    <input id="file-upload" type="file" accept="image/*" @change="previewYourImage" :class="{ 'is-invalid': submitted && $v.image.$error }" />
-                    <div v-if="submitted && $v.image.$error" class="invalid-feedback">
-
-                        <span v-if="!$v.imageUrl.required">Image is required</span>
-
-                    </div>
+                    <input id="file-upload" type="file" accept="image/*" @change="previewYourImage" />
+                   
                 </div>
 
             </div>

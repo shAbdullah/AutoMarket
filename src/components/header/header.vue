@@ -23,10 +23,12 @@
 
 
             </div>
-          
-              <div class="  navbarSupportedContent justify-content-end mr-4" style=" " > <router-link  to="newRequst" tag="button"   class="btn btn-outline-info my-2 my-sm-0" >Add Requst</router-link > </div>
-            <div class="  navbarSupportedContent justify-content-end" style=" " > <button @click="onLogout" class="btn btn-danger my-2 my-sm-0" >Log out</button>
+          <div class="row">
+                <div class="  navbarSupportedContent  mr-4" style=" " > <router-link  to="newRequst" tag="button"   class="btn btn-outline-info my-2 my-sm-0" >Add Requst</router-link > </div>
+            <div class="  navbarSupportedContent " style=" " > <button @click="onLogout" class="btn btn-danger my-2 my-sm-0" >Log out</button>
             </div>
+          </div>
+            
             
              
         </nav>
